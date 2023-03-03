@@ -1,10 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Quiz from './components/quiz/Quiz.js'
+import Quiz from './components/Quiz.js'
+import Welcome from "./components/Welcome.js";
+import "./index.scss"
 
 const App = () => {
+    const [started, setStarted] = React.useState(false)
+    function startQuiz() {
+        setStarted(true);
+    }
+    function resetQuiz() {
+        setStarted(false);
+    }
     return (
-        <Quiz />
+        <div className="container">
+            {!started && <Welcome handleStart={startQuiz}/>}
+            {started && <Quiz handleReset={resetQuiz} />}
+        </div>
     )
 }
 

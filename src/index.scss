@@ -1,0 +1,106 @@
+$font-primary: 'Karla', sans-serif;
+$font-secondary: 'Inter', sans-serif;
+$color-primary: #F5F7FB;
+$color-border: #DBDEF0;
+$text-color: #293264;
+$bg-btn: #4D5B9E;
+$bg-btn-selected: #D6DBF5;
+$bg-btn-correct: #94D7A2;
+$bg-btn-incorrect: #F8BCBC;
+$radius: 10px;
+
+// TODO: CSS for blobs
+
+body {
+    font-family: $font-primary;
+    background-color: $color-primary;
+    color: $text-color;
+}
+
+button {
+    font-family: $font-secondary;
+    background-color: $bg-btn;
+    border: none;
+    border-radius: $radius;
+    color: $color-primary;
+    text-align: center;
+}
+
+.quiz-welcome {
+    height: 400px;
+    width: 400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .quiz-title {
+        font-weight: 700;
+        font-size: 31.25px;
+        line-height: 37px;
+    }
+    .quiz-description {
+        padding-top: 0;
+    }
+    .quiz-start {
+        width: 200px;
+        height: 50px;
+        border-radius: $radius;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;  
+    }
+}
+.quiz-container {
+    width: 700px;
+    height: auto;
+    margin: 100px auto;
+    .quiz-section{
+        border-bottom: 1px solid $color-border;
+        padding-bottom: 15px;
+        h3 {
+            line-height: 18px;
+        }
+        .btn {
+            font-family: $font-primary;
+            border: 1px solid $bg-btn;
+            border-radius: $radius;
+            background-color: $color-primary;
+            color: $text-color;
+            padding: 5px 7px;
+            min-width: 100px;
+            margin-right: 10px;
+            &.selected {
+                background-color: $bg-btn-selected;
+                border: none;
+            }
+            &.correct {
+                background-color: $bg-btn-correct;
+                border: none;
+            }
+            &.incorrect {
+                background-color: $bg-btn-incorrect;
+                opacity: 0.5;
+                border: none;
+            }
+            &.other {
+                opacity: 0.5;
+            }
+        }
+    }
+    .actions{
+        margin: 0 auto;
+        .btn-action {
+            padding: 10px 15px;
+            min-width: 100px;
+            margin: 10px;
+            font-weight: 600;
+            font-size: 11px;
+            line-height: 12px;
+            &:disabled {
+                opacity: 0.6;
+            }
+        }
+    }
+}
