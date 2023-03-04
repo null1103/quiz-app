@@ -115,12 +115,13 @@ export default function Quiz(props) {
         <div className='quiz-container'>
             {questionItems}
             <div className='actions'>
-                {isCheckAnswers ? (
+                {isCheckAnswers && (
                     <>
                         You scored {score}/{questions.length} correct answers
                         <button className='btn-action' onClick={handlePlayAgain}>Play again</button>
                     </>
-                ): <button className='btn-action' onClick={handleCheckAnswers} disabled={!enabled}>Check answers</button> }
+                )}
+                {(!isCheckAnswers && questions.length > 0) && <button className='btn-action' onClick={handleCheckAnswers} disabled={!enabled}>Check answers</button> }
             </div>
         </div> 
     )
